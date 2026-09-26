@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookStore - 100 Books</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">📚 BookStore</div>
+
+        <button class="menu-btn" id="menuBtn"></button>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#books">Books</a>
+            <a href="#categories">Categories</a>
+            <a href="#cart">Cart 🛒 <span id="cart-count">0</span></a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Welcome to BookStore</h1>
+            <p>Discover your favorite books at the best prices.</p>
+            <a href="#books" class="shop-btn">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Search -->
+
+
+    <!-- ==============================
+     BOOK CATEGORIES
+================================= -->
+
+<section class="categories-section" id="categories">
+
+    <div class="container">
+
+        <h2 class="section-title">📚 Browse Books</h2>
+
+        <p class="section-subtitle">
+            Choose a category to explore books
+        </p>
+
+        <div class="category-grid">
+
+            <a href="school-books.html" class="category-card">
+                <div class="category-icon">🏫</div>
+                <h3>School Books</h3>
+                <p>Class 1 to Class 12</p>
+            </a>
+
+            <a href="programming.html" class="category-card">
+                <div class="category-icon">💻</div>
+                <h3>Programming</h3>
+                <p>C, C++, Java, Python & More</p>
+            </a>
+
+            <a href="web-development.html" class="category-card">
+                <div class="category-icon">🌐</div>
+                <h3>Web Development</h3>
+                <p>HTML, CSS, JavaScript</p>
+            </a>
+
+            <a href="playing.html" class="category-card">
+                <div class="category-icon">🎮</div>
+                <h3>Playing</h3>
+                <p>Games & Activity Books</p>
+            </a>
+
+            <a href="story-books.html" class="category-card">
+                <div class="category-icon">📖</div>
+                <h3>Story Books</h3>
+                <p>Stories & Novels</p>
+            </a>
+
+            <a href="competitive.html" class="category-card">
+                <div class="category-icon">📝</div>
+                <h3>Competitive Exams</h3>
+                <p>SSC, Railway, Banking & More</p>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <section class="search-section">
+        <input 
+            type="text" 
+            id="searchInput" 
+            placeholder="🔍 Search book by name..."
+        >
+
+        <select id="categoryFilter">
+            <option value="all">All Categories</option>
+            <option value="Programming">Programming</option>
+            <option value="Fiction">Fiction</option>
+            <option value="Science">Science</option>
+            <option value="Business">Business</option>
+            <option value="History">History</option>
+            <option value="Education">Education</option>
+        </select>
+    </section>
+
+    <!-- Books -->
+    <section class="books-section" id="books">
+        <h2>Our Books</h2>
+        <p class="subtitle">Choose from our collection of 100 books</p>
+
+        <div id="book-container" class="book-container"></div>
+    </section>
+
+    <!-- Cart -->
+    <section class="cart-section" id="cart">
+        <h2>🛒 Shopping Cart</h2>
+
+        <div id="cart-container"></div>
+
+        <div class="cart-total">
+            <h3>Total: ₹<span id="cart-total">0</span></h3>
+            <button onclick="checkout()">Checkout</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h3>📚 BookStore</h3>
+        <p>Your favorite online book store.</p>
+        <p>© 2026 BookStore. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+
+    <!-- Book Details Popup -->
+<div id="bookModal" class="modal">
+    <div class="modal-content">
+
+        <span class="close-modal" onclick="closeBookModal()">
+            &times;
+        </span>
+
+        <img id="modalImage" src="" alt="Book">
+
+        <div class="modal-info">
+            <h2 id="modalTitle"></h2>
+
+            <p id="modalAuthor"></p>
+
+            <p id="modalCategory"></p>
+
+            <div id="modalRating" class="rating"></div>
+
+            <h3 id="modalPrice"></h3>
+
+            <p id="modalDescription"></p>
+
+            <button id="modalCartBtn" class="add-btn">
+                🛒 Add to Cart
+            </button>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
